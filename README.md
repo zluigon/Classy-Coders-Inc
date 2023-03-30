@@ -17,9 +17,21 @@ Create a class `Employee` that has the following properties and methods:
 - `isHired`: A private field that initializes with a value of `true`.
 - `getSalary()`: A method that returns the `salary` of the employee.
 - `setSalary(amount)`: A method that updates the `salary` of the employee.
-- `status(command)`: A method that updates `isHired` to:
+- `getStatus()`: A method that returns the value of `isHired`.
+- `setStatus(command)`: A method that updates `isHired` to:
     - `true` if `command` is `"hire"`
     - `false` if `command` is `"fire"`
+
+### Examples
+```javascript
+const preston = Employee("Preston", "Engineer", 100000);
+person.getSalary(); // 100000
+person.setSalary(105000);
+person.getSalary(); // 105000
+person.getStatus(); // true;
+person.status("fire");
+person.getStatus(); // false;
+```
 
 ## `Manager`
 
