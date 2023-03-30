@@ -4,6 +4,8 @@ In a tech-driven world, the importance of skilled employees cannot be overstated
 
 They have provided you with the following class diagram that represents their current workforce.
 
+![Classy Coders Inc Class Diagram](./assets/EmployeeClassDiagram.png)
+
 ## `Employees`
 
 Create a class `Employee` that has the following properties and methods:
@@ -21,15 +23,15 @@ Create a class `Employee` that has the following properties and methods:
 
 Create a subclass `Manager` that extends `Employee` and has the following additional property and methods:
 - `department`: A string representing the department the manager is in charge of.
-- `employeesManaged`: A property that holds an array of `Employees` the manager manages.
+- `employeesManaged`: A *private* property that holds an array of `Employees` the manager manages.
 - `getDepartment()`: A method that returns the department of the manager.
-- `setDepartment()`: A method that returns the department of the manager.
+- `setDepartment(department)`: A method that returns the department of the manager.
 
 ## `SoftwareEngineer`
 
 Create a class of `SoftwareEngineer` that extends `Employee` and has the following additional properties and methods:
 - `programmingLanguages`: A *private* property that holds an array of programming languages the software engineer knows.
-- `getLanguages`: A method to return the `programmingLanguages` that the engineer knows.
+- `getLanguages()`: A method to return the `programmingLanguages` that the engineer knows.
 - `setLanguage(language)`: A method to update the `programmingLanguages` with a new language to the array.
 
 
@@ -38,16 +40,16 @@ Create a class of `SoftwareEngineer` that extends `Employee` and has the followi
 Create a class of `SalesPerson` that extends `Employee` and has the following additional properties and methods:
 - `clients`: A property that holds an array of clients the salesperson manages.
 - `totalSales`: A private field that contains the value of total sales the employee has performed.
-- `getSalesNumbers`: A method that returns the `totalSales` for the salesperson.
-- `makeSale`: A method that the salesperson can call to make a sale.
+- `getSalesNumbers()`: A method that returns the `totalSales` for the salesperson.
+- `makeSale(amount)`: A method that updates the `totalSale` with the `amount`.
 
-## Updating `Employee` Class
-- `allEmployees` - Initializes as an empty array. Every time a new `Employee` is created they are added to the end of this array.
+## Updating `Employee` Class with Static Values
+- `allEmployees`: A static property that initializes as an empty array. Every time a new `Employee` is created they are added to the end of this array.
 - `getEmployees`: A static method that returns the array of `allEmployees`.
 - `setEmployees(Employee)`: A static method that updates the array of `allEmployees` when a new employee is created.
 - `getTotalPayroll(employees)`: A static method that returns the total salaries of all employees that are stored in the `allEmployees` array.
 
 ## Stretch: Go Above and Beyond 🚀
-- **Error Handling**: Add error handling to the `setSalary` method of the Employee class. If the salary is less than `0`, throw an error with the message `"Salary cannot be negative"`.
-- **Promotions**: Add a `promote` method to the `Employee` class. This method should take in a new job title as an argument and update the employee's job title and salary accordingly. Implement this method in the `Manager` subclasses as well, as they may have additional promotion criteria.
-- **Performance Metrics**: Add performance metrics to the `Employee` class. Each employee should have a set of metrics such as sales numbers for salespeople, project completion rate for software engineers, and employee retention rate for managers. Implement a method to calculate and return the performance score based on these metrics. Use this score to determine bonuses or promotions.
+1. **Error Handling**: Add error handling to the `setSalary` method of the Employee class. If the salary is less than `0`, throw an error with the message `"Salary cannot be negative"`.
+2. **Promotions**: Add a `promote` method to the `Employee` class. This method should take in a new job title as an argument and update the employee's job title and salary accordingly. Implement this method in the `Manager` subclasses as well, as they may have additional promotion criteria.
+3. **Performance Metrics**: Add performance metrics to the `Employee` class. Each employee should have a set of metrics such as sales numbers for salespeople, project completion rate for software engineers, and employee retention rate for managers. Implement a method to calculate and return the performance score based on these metrics. Design a method that use this score to determine bonuses and/or promotions.
