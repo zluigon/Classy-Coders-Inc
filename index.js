@@ -3,7 +3,7 @@ const { Manager } = require("./classes/Manager")
 const { SalesPerson } = require("./classes/SalesPerson")
 const { SoftwareEngineer } = require("./classes/SoftwareEngineer")
 
-// Test your code here
+// Run and debug your code here
 
 
 
