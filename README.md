@@ -8,9 +8,9 @@ They have provided you with the following class diagram that represents their cu
 
 ![Classy Coders Inc Class Diagram](./assets/EmployeeClassDiagram.png)
 
-## `Employees`
+## `Employee`
 
-Create a class `Employees` that has the following properties and methods:
+Create a class `Employee` that has the following properties and methods:
 - `name`: A string representing the name of the employee.
 - `position`: A string representing the position of the employee.
 - `salary`: A *private* number representing the salary of the employee.
@@ -24,7 +24,7 @@ Create a class `Employees` that has the following properties and methods:
 
 ### Examples
 ```javascript
-const preston = new Employees("Preston", "Engineer", 100000);
+const preston = new Employee("Preston", "Engineer", 100000);
 preston.getSalary(); // 100000
 preston.setSalary(105000);
 preston.getSalary(); // 105000
@@ -35,17 +35,17 @@ preston.getStatus(); // false;
 
 ## `Manager`
 
-Create a subclass `Manager` that extends `Employees` (don't forget to import `Employees` to the `Manager.js` file!) and has the following additional property and methods:
+Create a subclass `Manager` that extends `Employee` (don't forget to import `Employee` to the `Manager.js` file!) and has the following additional property and methods:
 - `department`: A string representing the department the manager is in charge of.
-- `employeesManaged`: A *private* property that holds an array of `Employees` the manager manages. Initializes as an empty array.
+- `employeesManaged`: A *private* property that holds an array of `Employee` class instances the manager manages. Initializes as an empty array.
 - `getEmployeesManaged()`: A method that returns the employees a manager has.
-- `setEmployeesManaged(employee)`: A method that updates the `employeesManaged` with a new `employee`
+- `setEmployeesManaged(employee)`: A method that updates the `employeesManaged` with a new `Employee`
 
 ### Examples
 ```javascript
 const jenna = new Manager("Jenna", "Head of Engineers", 120000, "Software Engineering", 10);
 jenna.getEmployeesManaged(); // []
-const preston = new Employees("Preston", "Engineer", 100000);
+const preston = new Employee("Preston", "Engineer", 100000);
 jenna.setEmployeesManaged(preston);
 jenna.getEmployeesManaged(); // [ Employee ]
 ```
@@ -70,16 +70,16 @@ Create a class of `SalesPerson` that extends `Employee` and has the following ad
 - `clients`: A property that holds an array of clients the salesperson manages.
 - `totalSales`: A private field that contains the value of total sales the employee has performed. Initializes with a value of 0.
 - `getSalesNumbers()`: A method that returns the `totalSales` for the salesperson.
-- `makeSale(amount)`: A method that updates the `totalSale` with the `amount`.
+- `makeSale(amount)`: A method that updates the `totalSales` with the `amount`.
 
 ### Examples
 
 ```javascript
 const malik = new SalesPerson("Malik", "Enterprise Sale Associate", 90000, ["Vine", "MySpace", "Shutterfly"])
-malik.getSalesNumber(); // 0
+malik.getSalesNumbers(); // 0
 malik.makeSale(10500);
 malik.makeSale(20000);
-malik.getSalesNumber(); // 30500
+malik.getSalesNumbers(); // 30500
 ```
 
 ## Updating `Employee` Class with Static Values
