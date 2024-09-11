@@ -23,6 +23,12 @@ describe("Employees tests without static methods", () => {
         preston.setStatus("fire");
         expect(preston.getStatus()).toBe(false);
     })
+
+    test("Throws errow with negative salary", ()=>{
+        expect(() => {
+            preston.setSalary(-25).toThrow("Salary cannot be negative");
+        })
+    })
 })
 
 describe("Manager tests", () => {
@@ -78,6 +84,10 @@ describe("SalesPerson Tests", () => {
         malik.makeSale(10500);
         malik.makeSale(20000);
         expect(malik.getSalesNumber()).toBe(30500);
+    })
+
+    test("Finds and returns client", () =>{
+        expect(malik.findClient("MySpace")).toBe("MySpace");
     })
 })
 
