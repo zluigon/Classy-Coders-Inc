@@ -7,7 +7,11 @@ class Employees {
     this.title = title;
     this.#salary = salary;
     this.#isHired = true;
+
+    Employees.allEmployees.push(this);
   }
+
+  static allEmployees = [];
 
   getSalary() {
     return this.#salary;
@@ -27,6 +31,17 @@ class Employees {
     } else if (cmd === "fire") {
       this.#isHired = false;
     }
+  }
+
+  static getEmployees() {
+    return Employees.allEmployees;
+  }
+
+  static getTotalPayroll() {
+    return Employees.allEmployees.reduce(
+      (total, employee) => total + employee.getSalary(),
+      0
+    );
   }
 }
 
